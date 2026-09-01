@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+    background-color: #F6F1E8;
+    color: #111827;
+  }
+}
+
+/* Image 1 Neo-Brutalist / Pop Card Styles */
+.image1-card {
+  background-color: #ffffff;
+  border: 2.5px solid #111827;
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0px #111827;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image1-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #111827;
+}
+
+.image1-card-sm {
+  background-color: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 0px #111827;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image1-card-sm-hover:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 4.5px 4.5px 0px #111827;
+}
+
+.image1-btn-yellow {
+  background-color: #FACC15;
+  color: #111827;
+  font-weight: 800;
+  border: 2px solid #111827;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 0px #111827;
+  transition: all 0.1s ease-in-out;
+}
+
+.image1-btn-yellow:hover {
+  background-color: #FDE047;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #111827;
+}
+
+.image1-btn-yellow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111827;
+}
+
+.image1-btn-dark {
+  background-color: #111827;
+  color: #ffffff;
+  font-weight: 800;
+  border: 2px solid #111827;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 0px #FACC15;
+  transition: all 0.1s ease-in-out;
+}
+
+.image1-btn-dark:hover {
+  background-color: #1F2937;
+  transform: translate(-1px, -1px);
+}
+
+.image1-btn-dark:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #FACC15;
+}
+
+.image1-badge-red {
+  background-color: #EF4444;
+  color: #ffffff;
+  border: 1.5px solid #111827;
+  box-shadow: 2px 2px 0px #111827;
+}
+
+.image1-badge-yellow {
+  background-color: #FEF08A;
+  color: #854D0E;
+  border: 1.5px solid #111827;
+  box-shadow: 2px 2px 0px #111827;
+}
+
+.image1-badge-green {
+  background-color: #BBF7D0;
+  color: #166534;
+  border: 1.5px solid #111827;
+  box-shadow: 2px 2px 0px #111827;
+}
+
+.image1-badge-slate {
+  background-color: #F1F5F9;
+  color: #334155;
+  border: 1.5px solid #111827;
+  box-shadow: 2px 2px 0px #111827;
+}
+
