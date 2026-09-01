@@ -31,7 +31,30 @@ import {
   ChevronRight,
   Sliders,
   Check,
-  X
+  X,
+  Apple,
+  Heart,
+  Brain,
+  Pill,
+  Leaf,
+  BatteryCharging,
+  Dna,
+  Target,
+  Award,
+  Database,
+  Eye,
+  Smile,
+  Compass,
+  Crosshair,
+  Stethoscope,
+  Gauge,
+  Fuel,
+  Layers,
+  Bot,
+  Code,
+  Copy,
+  BookOpen,
+  HelpCircle
 } from 'lucide-react';
 
 interface IconRendererProps {
@@ -43,6 +66,52 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ name = 'Sparkles', c
   switch (name) {
     case 'Sparkles':
       return <Sparkles className={className} />;
+    case 'Apple':
+      return <Apple className={className} />;
+    case 'Heart':
+      return <Heart className={className} />;
+    case 'Brain':
+      return <Brain className={className} />;
+    case 'Pill':
+      return <Pill className={className} />;
+    case 'Leaf':
+      return <Leaf className={className} />;
+    case 'BatteryCharging':
+      return <BatteryCharging className={className} />;
+    case 'Dna':
+      return <Dna className={className} />;
+    case 'Target':
+      return <Target className={className} />;
+    case 'Award':
+      return <Award className={className} />;
+    case 'Database':
+      return <Database className={className} />;
+    case 'Eye':
+      return <Eye className={className} />;
+    case 'Smile':
+      return <Smile className={className} />;
+    case 'Compass':
+      return <Compass className={className} />;
+    case 'Crosshair':
+      return <Crosshair className={className} />;
+    case 'Stethoscope':
+      return <Stethoscope className={className} />;
+    case 'Gauge':
+      return <Gauge className={className} />;
+    case 'Fuel':
+      return <Fuel className={className} />;
+    case 'BookOpen':
+      return <BookOpen className={className} />;
+    case 'HelpCircle':
+      return <HelpCircle className={className} />;
+    case 'Layers':
+      return <Layers className={className} />;
+    case 'Bot':
+      return <Bot className={className} />;
+    case 'Code':
+      return <Code className={className} />;
+    case 'Copy':
+      return <Copy className={className} />;
     case 'ListChecks':
       return <ListChecks className={className} />;
     case 'Coffee':

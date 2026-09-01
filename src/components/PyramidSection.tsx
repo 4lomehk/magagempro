@@ -28,7 +28,7 @@ export const PyramidSection: React.FC<PyramidSectionProps> = ({ layers, content 
       {/* Formula Display Box */}
       <div className="p-4 sm:p-5 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[3px_3px_0px_#111827] text-center overflow-x-auto">
         <div className="text-[10px] font-black uppercase text-slate-500 tracking-wider mb-1">
-          CELLULAR PROTOCOL EQUATION
+          CELLULAR EQUATION
         </div>
         <div className="font-mono font-black text-sm sm:text-base text-[#111827] py-1 whitespace-nowrap">
           <span className="text-[#EA580C]">Cellular Energy</span> = (

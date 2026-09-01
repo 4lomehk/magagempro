@@ -34,7 +34,13 @@ export default function App() {
   const [premiumResources, setPremiumResources] = useState<ResourceItem[]>(() => {
     try {
       const saved = localStorage.getItem('maga_premium_resources');
-      return saved ? JSON.parse(saved) : DEFAULT_PREMIUM_RESOURCES;
+      if (saved) {
+        const parsed: ResourceItem[] = JSON.parse(saved);
+        const existingIds = new Set(parsed.map((item) => item.id));
+        const missingDefaults = DEFAULT_PREMIUM_RESOURCES.filter((item) => !existingIds.has(item.id));
+        return missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+      }
+      return DEFAULT_PREMIUM_RESOURCES;
     } catch {
       return DEFAULT_PREMIUM_RESOURCES;
     }

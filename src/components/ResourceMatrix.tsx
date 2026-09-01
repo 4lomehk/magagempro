@@ -209,7 +209,7 @@ export const ResourceMatrix: React.FC<ResourceMatrixProps> = ({
               ⚡ 專屬抗炎戰略物資訂閱通道：
             </span>
             <a
-              href="https://buy.stripe.com/4gM4gz94Z2Ny5zjblN9fW06"
+              href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
               target="_blank"
               rel="noopener noreferrer"
               className="image1-btn-yellow px-5 py-2.5 text-xs font-black tracking-wide inline-flex items-center justify-center gap-2 shadow-[2px_2px_0px_#111827] text-center"

@@ -17,22 +17,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="space-y-6">
       {/* Top Banner Card matching Image 1 exact structure */}
       <div className="image1-card p-6 sm:p-9 relative overflow-hidden">
-        {/* Top-Left Red Pill Badge and Protocols matching Image 1 exact structure */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#EF4444] text-white font-mono font-black text-xs tracking-wider border-2 border-[#111827] shadow-[2px_2px_0px_#111827]">
-              <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-              <span>000010066</span>
-            </div>
-            <span className="text-[11px] font-black px-2.5 py-1 rounded-md bg-[#FACC15] text-[#111827] border border-[#111827] shadow-[1px_1px_0px_#111827]">
-              MAGA PROTOCOL
-            </span>
-            <span className="text-[11px] font-bold px-2.5 py-1 rounded-md bg-[#FEF08A] text-[#854D0E] border border-[#111827] shadow-[1px_1px_0px_#111827]">
-              RFK Jr. PROTOCOL
-            </span>
-          </div>
-        </div>
-
         {/* Hero Headline */}
         <div className="space-y-3 mb-8">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight leading-[1.2]">

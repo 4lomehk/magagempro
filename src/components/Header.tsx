@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lock, ShieldCheck, Globe, Sliders, KeyRound } from 'lucide-react';
+import { Globe, Sliders } from 'lucide-react';
 
 interface HeaderProps {
   isUnlocked: boolean;
@@ -7,7 +7,7 @@ interface HeaderProps {
   engUrl: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ isUnlocked, onOpenGemManager, engUrl }) => {
+export const Header: React.FC<HeaderProps> = ({ isUnlocked: _isUnlocked, onOpenGemManager, engUrl }) => {
   return (
     <header className="sticky top-0 z-40 w-full border-b-[2.5px] border-[#111827] bg-[#F6F1E8]/95 backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ isUnlocked, onOpenGemManager, en
             <div className="flex items-center gap-2">
               <span className="font-black text-xl sm:text-2xl tracking-tight text-[#0F172A] leading-none">MAGA</span>
               <span className="text-xs font-black uppercase px-2 py-0.5 rounded-lg bg-[#FACC15] text-[#0F172A] border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_#0F172A] leading-tight">
-                GEM PRO
+                SITE
               </span>
             </div>
             <p className="text-[11px] sm:text-xs font-bold text-[#334155] tracking-tight mt-0.5">
@@ -44,35 +44,14 @@ export const Header: React.FC<HeaderProps> = ({ isUnlocked, onOpenGemManager, en
             <span>ENG</span>
           </a>
 
-          {/* User Unlock Phase Badge */}
-          <div
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 border-[#111827] text-xs font-extrabold transition-all select-none ${
-              isUnlocked
-                ? 'bg-[#BBF7D0] text-[#166534] shadow-[2px_2px_0px_#111827]'
-                : 'bg-white text-slate-700 shadow-[2px_2px_0px_#111827]'
-            }`}
-          >
-            {isUnlocked ? (
-              <>
-                <ShieldCheck className="w-3.5 h-3.5 text-[#166534]" />
-                <span>階段: 已解鎖 (DECRYPTED)</span>
-              </>
-            ) : (
-              <>
-                <Lock className="w-3.5 h-3.5 text-slate-500" />
-                <span>階段: 待驗證 (LOCKED)</span>
-              </>
-            )}
-          </div>
-
-          {/* GEM PRO Admin Button */}
+          {/* Admin / Site Status Button */}
           <button
             onClick={onOpenGemManager}
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#FACC15] hover:bg-[#FDE047] border-2 border-[#111827] shadow-[2.5px_2.5px_0px_#111827] text-xs font-black text-[#111827] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
-            title="開啟 GEM PRO 管理介面"
+            title="開啟管理與驗證介面"
           >
             <Sliders className="w-3.5 h-3.5" />
-            <span>GEM PRO</span>
+            <span>SITE</span>
           </button>
         </div>
 

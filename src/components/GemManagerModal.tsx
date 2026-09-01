@@ -19,7 +19,10 @@ import {
   Bot,
   Lock,
   ShieldCheck,
-  AlertCircle
+  AlertCircle,
+  Code,
+  Copy,
+  Globe
 } from 'lucide-react';
 import { ResourceItem, PasskeyConfig, AppContentConfig } from '../types';
 import { IconRenderer } from './IconRenderer';
@@ -60,7 +63,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
   const [adminPasswordInput, setAdminPasswordInput] = useState('');
   const [adminAuthError, setAdminAuthError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<'free' | 'premium' | 'passkey' | 'ai' | 'backup'>('free');
+  const [activeTab, setActiveTab] = useState<'free' | 'premium' | 'passkey' | 'ai' | 'backup' | 'googlesites'>('free');
 
   // Form states for adding/editing a resource item
   const [editingItem, setEditingItem] = useState<ResourceItem | null>(null);
@@ -238,7 +241,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
         id: 'gem_' + Date.now(),
         code: aiCategory === 'premium' ? `PREM_${Date.now().toString().slice(-2)}` : `FREE_${Date.now().toString().slice(-2)}`,
         badge: aiCategory === 'premium' ? '粒線體靶向' : '細胞清淤',
-        title: aiTopic ? `${aiTopic} 實戰指南` : '薑黃黑椒細胞抗炎 Protocol',
+        title: aiTopic ? `${aiTopic} 實戰指南` : '薑黃黑椒細胞抗炎實戰指南',
         description: '高濃度活性多酚，物理層徹底阻斷發炎連鎖訊號。',
         url: 'https://sites.google.com/view/magamap/home',
         category: aiCategory,
@@ -430,6 +433,17 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
               >
                 備份 / 匯入
               </button>
+
+              <button
+                onClick={() => { setActiveTab('googlesites'); setEditingItem(null); }}
+                className={`px-3.5 py-2 text-xs font-black rounded-lg border-2 border-[#111827] transition-all whitespace-nowrap cursor-pointer ${
+                  activeTab === 'googlesites'
+                    ? 'bg-[#E11D48] text-white shadow-[2px_2px_0px_#111827]'
+                    : 'bg-[#FFF1F2] text-[#BE123C] hover:bg-[#FFE4E6]'
+                }`}
+              >
+                🌐 Google Sites 嵌入碼
+              </button>
             </div>
 
         {/* Modal Main Content Area */}
@@ -512,24 +526,59 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">圖示 (Icon)</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1 flex items-center justify-between">
+                        <span>圖示 (Icon)</span>
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-300">
+                          預覽: <IconRenderer name={editingItem.icon || 'Sparkles'} className="w-3.5 h-3.5 text-[#EA580C]" />
+                        </span>
+                      </label>
                       <select
                         value={editingItem.icon || 'Sparkles'}
                         onChange={(e) => setEditingItem({ ...editingItem, icon: e.target.value })}
                         className="w-full bg-white border-2 border-[#111827] px-3 py-2 text-xs font-bold rounded-lg"
                       >
-                        <option value="Sparkles">Sparkles (星光)</option>
-                        <option value="Shield">Shield (防護盾)</option>
-                        <option value="ShieldCheck">ShieldCheck (成功盾)</option>
-                        <option value="Zap">Zap (閃電能量)</option>
-                        <option value="Flame">Flame (火焰核心)</option>
-                        <option value="Droplet">Droplet (液態油滴)</option>
-                        <option value="Fish">Fish (Omega 3 魚)</option>
-                        <option value="RefreshCw">RefreshCw (重啟循環)</option>
-                        <option value="Coffee">Coffee (淺炒咖啡)</option>
-                        <option value="Sun">Sun (日光維他命)</option>
-                        <option value="Activity">Activity (體檢心率)</option>
-                        <option value="ListChecks">ListChecks (實踐清單)</option>
+                        <optgroup label="🌱 營養與生物修復">
+                          <option value="Apple">Apple (大蕉 / 水果 / 原生碳水)</option>
+                          <option value="Leaf">Leaf (綠茶 / 草本 / 多酚)</option>
+                          <option value="Coffee">Coffee (綠茶咖啡 / 淺炒咖啡)</option>
+                          <option value="Droplet">Droplet (EVOO 橄欖油 / 油滴)</option>
+                          <option value="Fish">Fish (沙甸魚 / Omega 3)</option>
+                          <option value="Fuel">Fuel (草飼牛肉 / 頂級燃料)</option>
+                          <option value="Pill">Pill (補充劑 / 營養物資)</option>
+                        </optgroup>
+                        <optgroup label="⚡ 能量與腺體調頻">
+                          <option value="Zap">Zap (閃電能量 / 甲狀腺調頻)</option>
+                          <option value="Sun">Sun (D3 日光 / 陽光免疫)</option>
+                          <option value="Flame">Flame (火焰核心 / 粒線體燃脂)</option>
+                          <option value="BatteryCharging">BatteryCharging (細胞充能 / 消除疲勞)</option>
+                          <option value="Dna">Dna (粒線體修復 / 基因調控)</option>
+                          <option value="RefreshCw">RefreshCw (重啟循環 / 腎臟連動)</option>
+                        </optgroup>
+                        <optgroup label="🛡️ 免疫、心身與都市病">
+                          <option value="Activity">Activity (都市病生存 / 心率活力)</option>
+                          <option value="Shield">Shield (免疫防禦盾 / 腸壁屏障)</option>
+                          <option value="ShieldCheck">ShieldCheck (成功防護 / 認證通過)</option>
+                          <option value="Heart">Heart (心血管 / 核心健康)</option>
+                          <option value="Brain">Brain (大腦專注 / 消除腦霧)</option>
+                          <option value="Smile">Smile (腸道益菌 / 良好生態)</option>
+                          <option value="Eye">Eye (明亮視野 / 調頻)</option>
+                        </optgroup>
+                        <optgroup label="🎯 戰略與指南工具">
+                          <option value="Target">Target (靶向阻斷 / 精準打擊)</option>
+                          <option value="Crosshair">Crosshair (精準清淤 / 狙擊發炎)</option>
+                          <option value="Sparkles">Sparkles (星光亮點 / 高效指引)</option>
+                          <option value="Sparkle">Sparkle (單星火花 / 薑黃生薑)</option>
+                          <option value="ListChecks">ListChecks (實踐清單 / 待辦事項)</option>
+                          <option value="BookOpen">BookOpen (抗炎全指南 / 知識庫)</option>
+                          <option value="Compass">Compass (生存羅盤 / 方向指南)</option>
+                          <option value="Award">Award (冠軍認證 / GOAT標準)</option>
+                          <option value="Gauge">Gauge (代謝儀表 / 數據監測)</option>
+                          <option value="Stethoscope">Stethoscope (醫學機制 / 體檢對齊)</option>
+                          <option value="Database">Database (物資資料庫 / 歸檔)</option>
+                          <option value="Key">Key (專屬密鑰 / 通行憑證)</option>
+                          <option value="Lock">Lock (安全加密鎖)</option>
+                          <option value="Globe">Globe (全球網絡 / 國際資源)</option>
+                        </optgroup>
                       </select>
                     </div>
 
@@ -941,6 +990,136 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
                     <span>確認匯入配置</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 6: GOOGLE SITES EMBED & STANDALONE */}
+          {activeTab === 'googlesites' && (
+            <div className="space-y-6">
+              <div className="p-4 rounded-xl bg-[#FFF1F2] border-2 border-[#E11D48] shadow-[2px_2px_0px_#E11D48] space-y-1.5">
+                <h4 className="text-sm font-black text-[#BE123C] flex items-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  <span>Google Sites 專屬嵌入與發布指南</span>
+                </h4>
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                  提供 2 種方式直接將完整的「MAGA 抗炎實戰資源庫」放入 Google 協作平台 (Google Sites)。
+                </p>
+              </div>
+
+              {/* Method 1: IFrame Embed */}
+              <div className="p-5 rounded-2xl bg-white border-2 border-[#111827] shadow-[3px_3px_0px_#111827] space-y-3.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#FACC15] text-[#111827] text-xs font-black flex items-center justify-center border border-[#111827]">
+                      1
+                    </span>
+                    <h5 className="font-black text-sm text-[#111827]">
+                      方法一：Google Sites 「網址嵌入」 (推薦最簡單)
+                    </h5>
+                  </div>
+                  <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A]">
+                    自動同步即時更新
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-600 font-medium">
+                  在 Google Sites 編輯器中，點擊右側 <strong>「插入 (Insert)」</strong> &gt; <strong>「嵌入 (Embed)」</strong> &gt; 選擇 <strong>「依網址 (By URL)」</strong>，貼上下方網址：
+                </p>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    readOnly
+                    value={window.location.origin}
+                    className="flex-1 bg-[#F8FAFC] border-2 border-[#111827] px-3.5 py-2 text-xs font-mono font-bold rounded-xl"
+                  />
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.origin);
+                      onShowToast('已複製 Google Sites 嵌入網址！', 'success');
+                    }}
+                    className="image1-btn-yellow px-4 py-2 text-xs font-black flex items-center gap-1.5 cursor-pointer shrink-0"
+                  >
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>複製網址</span>
+                  </button>
+                </div>
+
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700">
+                  <code>{`<iframe src="${window.location.origin}" width="100%" height="900" style="border:none; border-radius:16px;" allowfullscreen></iframe>`}</code>
+                </div>
+              </div>
+
+              {/* Method 2: Embed Code (Standalone HTML) */}
+              <div className="p-5 rounded-2xl bg-white border-2 border-[#111827] shadow-[3px_3px_0px_#111827] space-y-3.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#EF4444] text-white text-xs font-black flex items-center justify-center border border-[#111827]">
+                      2
+                    </span>
+                    <h5 className="font-black text-sm text-[#111827]">
+                      方法二：Google Sites 「嵌入程式碼 (Embed Code)」
+                    </h5>
+                  </div>
+                  <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] border border-[#F59E0B]">
+                    獨立單一 HTML
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-600 font-medium">
+                  在 Google Sites 點擊 <strong>「插入」</strong> &gt; <strong>「嵌入」</strong> &gt; <strong>「嵌入程式碼」</strong>，直接貼上全套獨立 HTML 代碼（已內建所有圖示、Passkey 密碼驗證、Stripe 連結與倒轉金字塔）：
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    onClick={async () => {
+                      try {
+                        const res = await fetch('/google-sites-embed.html');
+                        const text = await res.text();
+                        await navigator.clipboard.writeText(text);
+                        onShowToast('已複製完整 Google Sites 嵌入 HTML 代碼！', 'success');
+                      } catch {
+                        onShowToast('複製失敗，請直接在新分頁開啟或下載', 'error');
+                      }
+                    }}
+                    className="image1-btn-yellow px-4 py-2 text-xs font-black flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <Code className="w-3.5 h-3.5" />
+                    <span>一鍵複製完整嵌入代碼 (HTML)</span>
+                  </button>
+
+                  <a
+                    href="/google-sites-embed.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl border-2 border-[#111827] bg-white font-black text-xs text-slate-800 hover:bg-slate-50 flex items-center gap-1.5 shadow-[2px_2px_0px_#111827]"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>在獨立新分頁預覽 (Preview)</span>
+                  </a>
+
+                  <a
+                    href="/google-sites-embed.html"
+                    download="google-sites-maga.html"
+                    className="px-4 py-2 rounded-xl border-2 border-[#111827] bg-[#DCFCE7] text-[#15803D] hover:bg-[#BBF7D0] font-black text-xs flex items-center gap-1.5 shadow-[2px_2px_0px_#111827]"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>下載 HTML 檔案</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* 3 Step Guide */}
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] space-y-2">
+                <div className="font-black text-xs text-[#111827]">
+                  📝 Google Sites 3 步嵌入教學：
+                </div>
+                <ol className="text-xs text-slate-600 font-medium space-y-1 list-decimal list-inside">
+                  <li>打開你的 Google Sites 網站編輯頁面。</li>
+                  <li>在右側面板選擇 <strong>「插入 (Insert)」</strong> &gt; <strong>「嵌入 (Embed)」</strong>。</li>
+                  <li>選擇 <strong>「嵌入程式碼 (Embed code)」</strong> 貼上複製的 HTML，或選擇 <strong>「依網址 (By URL)」</strong> 貼上網址，點擊「插入」並將版面拉至合適寬度即可！</li>
+                </ol>
               </div>
             </div>
           )}

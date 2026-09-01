@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAGA 抗炎實戰資源庫 | Google Sites 專用版</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=JetBrains+Mono:wght@600;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+      background-color: #F6F1E8;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gs-card {
+      background-color: #FFFFFF;
+      border: 2.5px solid #111827;
+      border-radius: 1rem;
+      box-shadow: 4px 4px 0px #111827;
+      transition: all 0.15s ease-in-out;
+    }
+    .gs-card-hover:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111827;
+    }
+    .gs-btn-yellow {
+      background-color: #FACC15;
+      color: #111827;
+      border: 2.5px solid #111827;
+      box-shadow: 3px 3px 0px #111827;
+      border-radius: 0.75rem;
+      font-weight: 900;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .gs-btn-yellow:hover {
+      background-color: #FDE047;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #111827;
+    }
+    .gs-btn-yellow:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #111827;
+    }
+    .gs-btn-green {
+      background-color: #22C55E;
+      color: #FFFFFF;
+      border: 2.5px solid #111827;
+      box-shadow: 3px 3px 0px #111827;
+      border-radius: 0.75rem;
+      font-weight: 900;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .gs-btn-green:hover {
+      background-color: #16A34A;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #111827;
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 md:p-8 max-w-5xl mx-auto space-y-6">
+
+  <!-- 1. Header / Logo Bar -->
+  <header class="gs-card p-4 sm:p-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-[#EF4444] border-2 border-[#111827] shadow-[2.5px_2.5px_0px_#111827] flex items-center justify-center text-white font-black text-xl tracking-wider select-none shrink-0">
+        M
+      </div>
+      <div class="flex flex-col justify-center">
+        <div class="flex items-center gap-2">
+          <span class="font-black text-xl sm:text-2xl tracking-tight text-[#0F172A] leading-none">MAGA</span>
+          <span class="text-xs font-black uppercase px-2 py-0.5 rounded-lg bg-[#FACC15] text-[#0F172A] border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_#0F172A] leading-tight">
+            SITE
+          </span>
+        </div>
+        <p class="text-[11px] sm:text-xs font-bold text-[#334155] tracking-tight mt-0.5">
+          Make Anti-inflammatory Great Again
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#FACC15] hover:bg-[#FDE047] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#111827] transition-all"
+      >
+        <span>專屬訂閱</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="gs-card p-6 sm:p-8 space-y-5">
+    <div class="space-y-1">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-tight">
+        「用幾百蚊買 Supplement，<br />
+        <span class="text-[#EF4444]">不如買之前直接獲取抗炎經歷。」</span>
+      </h1>
+    </div>
+
+    <div class="p-4 rounded-xl bg-[#FFFBEB] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs sm:text-sm font-bold text-slate-800 space-y-1">
+      <p class="text-[#B45309] font-black">💥 實戰聲明：想知你個身體依家係咪慢性發炎緊？呢度公開抗炎經歷。</p>
+      <p class="text-slate-600">對齊主權後，輸入「一Code以下解銷」即可進入戰略資源。</p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 pt-2">
+      <button
+        onclick="document.getElementById('resource-section').scrollIntoView({behavior: 'smooth'})"
+        class="gs-btn-yellow px-6 py-3 text-sm sm:text-base flex items-center gap-2"
+      >
+        <span>物資解鎖</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+      <a
+        href="https://sites.google.com/view/magamap/home"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-5 py-3 rounded-xl border-2 border-[#111827] bg-white font-black text-xs sm:text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5 shadow-[2px_2px_0px_#111827]"
+      >
+        <span>英文對齊 (ENG)</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Inverted Food Pyramid Section -->
+  <section class="gs-card p-6 sm:p-8 space-y-6">
+    <div class="text-center space-y-2">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEF08A] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#854D0E]">
+        <span>CELLULAR ENERGY EQUATION</span>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-black text-[#111827]">RFK Jr. 一致律：倒轉飲食金字塔</h2>
+      <p class="text-xs sm:text-sm font-bold text-[#DC2626]">
+        💥 踢爆基石騙局：細胞 Ferrari 引擎需要高效燃料，而非引發發炎的工業種子油。
+      </p>
+    </div>
+
+    <!-- Equation Box -->
+    <div class="p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-center font-mono font-black text-xs sm:text-sm text-[#0F172A]">
+      Cellular Energy = (Beef Fuel × Mitochondria) − Seed Oil Toxicity
+    </div>
+
+    <!-- Layers -->
+    <div class="space-y-3.5">
+      <!-- Layer 1 -->
+      <div class="gs-card p-4 bg-[#FFF1F2] border-2 border-[#111827]">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#BE123C]">LAYER 01 // 最寬底層燃料</span>
+          <span class="px-2 py-0.5 rounded bg-[#BE123C] text-white text-[10px] font-black">GOAT 級能源</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">澳洲有機牛 / 阿根廷冠軍牛 / 草飼牛脂</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">為細胞 Ferrari 提供純淨高能量，物理層徹底阻斷漏電。</p>
+      </div>
+
+      <!-- Layer 2 -->
+      <div class="gs-card p-4 bg-[#ECFDF5] border-2 border-[#111827] sm:w-[94%] mx-auto">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#047857]">LAYER 02 // 中層清淤過濾</span>
+          <span class="px-2 py-0.5 rounded bg-[#047857] text-white text-[10px] font-black">腸道屏障</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">椰菜花蓉 / 蔥 / 蒜 / 蕃茄 / 發酵菜</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">重啟腸壁屏障，清淤體內重金屬與代謝廢物。</p>
+      </div>
+
+      <!-- Layer 3 -->
+      <div class="gs-card p-4 bg-[#FFFBEB] border-2 border-[#111827] sm:w-[88%] mx-auto">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#B45309]">LAYER 03 // 頂層精準調頻</span>
+          <span class="px-2 py-0.5 rounded bg-[#B45309] text-white text-[10px] font-black">靶向修復</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">高硒綠茶 / 鋅-蠔湯 / RAW 蜜 / 活性維他命 D</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">高滲透活性吸收，強化原生自癒免疫力。</p>
+      </div>
+    </div>
+
+    <!-- Stripe Direct Unlock Button in Pyramid -->
+    <div class="pt-2 text-center">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gs-btn-yellow px-6 py-2.5 text-xs sm:text-sm font-black inline-flex items-center justify-center gap-1.5"
+      >
+        <span>專屬訂閱</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. Resource Matrix Section (Tabs + Passkey + Stripe) -->
+  <section id="resource-section" class="gs-card p-6 sm:p-8 space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-[#111827] pb-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-[#111827]">抗炎戰略物資庫</h2>
+        <p class="text-xs font-bold text-slate-600">公開資源即時閱讀，解鎖專屬物資請驗證 Passkey</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex items-center gap-2">
+        <button
+          id="tab-btn-free"
+          onclick="switchTab('free')"
+          class="px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#EF4444] text-white transition-all cursor-pointer"
+        >
+          免費公開資源 (5)
+        </button>
+        <button
+          id="tab-btn-premium"
+          onclick="switchTab('premium')"
+          class="px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer"
+        >
+          解鎖專屬物資 (9)
+        </button>
+      </div>
+    </div>
+
+    <!-- Passkey Input & Direct Stripe Section (Shown for Premium or Unlocked) -->
+    <div id="passkey-unlock-card" class="hidden p-5 rounded-2xl bg-[#FFFBEB] border-2 border-[#111827] shadow-[3px_3px_0px_#111827] space-y-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="key" class="w-5 h-5 text-[#D97706]"></i>
+        <h3 class="font-black text-sm sm:text-base text-[#111827]">輸入一Code以下解銷 (Passkey Verification)</h3>
+      </div>
+      <p class="text-xs text-slate-600 font-bold">
+        輸入已獲取之 Passkey，即可即時解鎖下方 9 大抗炎特種戰略物資。
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input
+          id="passkey-input"
+          type="password"
+          placeholder="請輸入解鎖碼 (如：adm09 / temp)..."
+          class="flex-1 bg-white border-2 border-[#111827] shadow-[2px_2px_0px_#111827] px-4 py-2.5 text-sm font-mono font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FACC15]"
+          onkeydown="if(event.key==='Enter') verifyPasskey()"
+        />
+        <button
+          onclick="verifyPasskey()"
+          class="gs-btn-green px-5 py-2.5 text-xs font-black flex items-center justify-center gap-1.5"
+        >
+          <i data-lucide="unlock" class="w-4 h-4"></i>
+          <span>驗證解鎖</span>
+        </button>
+      </div>
+
+      <!-- Direct Stripe Unlock Link directly below passkey form -->
+      <div class="pt-2 border-t border-[#111827]/15 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <span class="text-xs font-bold text-slate-700">⚡ 專屬抗炎戰略物資訂閱通道：</span>
+        <a
+          href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="gs-btn-yellow px-5 py-2.5 text-xs font-black tracking-wide inline-flex items-center justify-center gap-2 shadow-[2px_2px_0px_#111827] text-center"
+        >
+          <span>立即進入唔離地以下解鎖</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div id="passkey-error" class="hidden p-2 rounded-lg bg-[#FEE2E2] border border-[#EF4444] text-xs font-black text-[#B91C1C]">
+        ❌ 解鎖碼無效或已過期，請確認後重試。
+      </div>
+      <div id="passkey-success" class="hidden p-2 rounded-lg bg-[#DCFCE7] border border-[#22C55E] text-xs font-black text-[#15803D]">
+        🎉 驗證成功！專屬抗炎物資已全數解鎖。
+      </div>
+    </div>
+
+    <!-- Free Resources Grid -->
+    <div id="free-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="https://lihi3.me/94iyi" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_01</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">搶先體驗</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">21 DAYS Free 1-3 體驗</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">21日抗炎修復首3部分精華全免開放。</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>即時閱讀</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_02</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">落實執行</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">7 Action 7件事實踐指南</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">落地執行的硬核動作與日常規劃。</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>即時閱讀</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/coffee-%E6%B7%BA%E7%82%92%E5%92%96%E5%95%A1" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_03</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">日常調頻</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Coffee 淺炒咖啡多酚抗炎</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">最大化多酚活性，啟動細胞修復。</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>即時閱讀</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E7%B6%AD%E4%BB%96%E5%91%BD-vitamin-d" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_04</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">免疫強化</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Vitamin D 免疫強效化</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">透過日光與接地氣調頻提升自癒力。</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>即時閱讀</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/%E8%88%8C%E9%A0%AD%E5%84%80%E8%A1%A8%E6%9D%BF%E8%BA%AB%E9%AB%94%E8%87%AA%E6%AA%A2%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 md:col-span-2 flex flex-col justify-between space-y-3 bg-[#FEF2F2]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_05</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">自我檢測</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">舌頭反映身體檢查 (舌頭儀表板)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">快速判斷體內發炎與脾胃狀態，即時自我檢測。</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>即時閱讀檢測</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Premium Resources Grid (9 Items) -->
+    <div id="premium-grid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- 9 Premium items -->
+      <div id="prem-card-1" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_01</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">護胃操作</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">胃部修復與黏膜重建</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">物理層面極速清淤，終止發炎連鎖反應。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/%E8%AD%B7%E8%83%83%E6%93%8D%E4%BD%9C" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-2" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_02</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">腸道特種部隊</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">益生元 Prebiotics</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">餵飽益生菌的終極彈藥，驅動生物能源。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/%E7%9B%8A%E7%94%9F%E5%85%83-prebiotics" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-3" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_03</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">免疫盾牌</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">維他命 K2 & U</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">重建胃壁黏膜，中斷胃酸倒流根源。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/%E8%85%B8%E8%83%83%E5%85%8D%E7%96%AB-%E7%B6%ADk2-u" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-4" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_04</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">益生菌核彈</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">神級發酵椰菜 (Sauerkraut)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">原生酵素之王，優化胃酸分泌。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/%E7%99%BC%E9%85%B5%E8%8F%9C-sauerkraut" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-5" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_05</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">主力能源</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Extra Virgin Olive Oil (EVOO)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">液態黃金，物理修復細胞發炎。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/extra-virgin-olive-oil-%E6%A9%84%E6%AC%96%E6%B2%B9-evoo" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-6" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_06</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">細胞清淤</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">老薑 SODA (Ginger Curcumin)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">中斷腸胃發炎，高滲透吸收。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E8%96%91%E9%BB%83-soda" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-7" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_07</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">核心蛋白</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Grass-Finished 牛肉主權</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">拒絕假草飼，獲取穩定能量輸出。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E8%8D%89%E9%A3%BC%E7%89%9B" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-8" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_08</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Omega 3</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">皇者沙甸魚 Omega 3</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">對沖種子油毒性，消除氧化風險。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/sandine-%E6%B2%99%E7%94%B8%E9%AD%9A%E6%B2%B9" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-9" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_09</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">系統重啟</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">腎臟重啟與脾胃連動</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">打破虛不受補發炎循環，恢復原生過濾主權。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/%E8%85%B8%E8%83%83%E5%85%8D%E7%96%AB-%E7%B6%ADk2-u" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-10" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_10</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">腸道碳水</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">大蕉 PLANTAIN 營養</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">抗性澱粉全指南，優化腸道菌群生態與血糖穩定。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1zZcf2JcDtueLyZlGLx4ckPkXnBi_iIj8/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-11" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_11</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">生存引擎</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">15種打工仔都市病</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">香港打工仔專用修復引擎，精準清淤辦公室慢性發炎。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1nX9urwOH9CBJP1XcVWkPofiOS-4osl-R/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-12" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_12</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">腺體調頻</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">甲狀腺修復</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">服藥後需嚴格空腹 1.5 小時方可進食，確保最高有效度。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1VWSoO2rxhJ1fP36aKJ5JqDbl7WuFpXMT/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-13" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_13</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">免疫防禦</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">D3 免疫阻抗</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">RFK JR. 倒轉金字塔機制，靶向阻斷發炎路徑。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1VWSoO2rxhJ1fP36aKJ5JqDbl7WuFpXMT/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-14" class="gs-card p-4 md:col-span-2 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_14</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">綠茶咖啡</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Green Coffee</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">工藤孝文推廣的標準做法，多酚與綠原酸協同燃脂抗炎。</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> 密碼保護中</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/coffee-%E6%B7%BA%E7%82%92%E5%92%96%E5%95%A1/green-coffee-%E7%B6%A0%E8%8C%B6%E5%92%96%E5%95%A1-kodk" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">進入閱讀 <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Footer -->
+  <footer class="gs-card p-5 text-center space-y-3">
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#FACC15] hover:bg-[#FDE047] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#111827]"
+      >
+        <span>專屬訂閱</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+      <a
+        href="https://sites.google.com/view/magamap/home"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white hover:bg-slate-100 border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-slate-800"
+      >
+        <span>英文版 MAGA Map</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+    <p class="text-[11px] font-bold text-slate-500">
+      MAGA 抗炎實戰資源庫 © 2026 // Make Anti-inflammatory Great Again
+    </p>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    let isUnlocked = localStorage.getItem('maga_unlocked') === 'true';
+
+    function switchTab(tab) {
+      const freeBtn = document.getElementById('tab-btn-free');
+      const premBtn = document.getElementById('tab-btn-premium');
+      const freeGrid = document.getElementById('free-grid');
+      const premGrid = document.getElementById('premium-grid');
+      const passkeyCard = document.getElementById('passkey-unlock-card');
+
+      if (tab === 'free') {
+        freeBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#EF4444] text-white transition-all cursor-pointer";
+        premBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer";
+        freeGrid.classList.remove('hidden');
+        premGrid.classList.add('hidden');
+        passkeyCard.classList.add('hidden');
+      } else {
+        freeBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer";
+        premBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#16A34A] text-white transition-all cursor-pointer";
+        freeGrid.classList.add('hidden');
+        premGrid.classList.remove('hidden');
+        passkeyCard.classList.remove('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    function verifyPasskey() {
+      const input = document.getElementById('passkey-input').value.trim();
+      const err = document.getElementById('passkey-error');
+      const succ = document.getElementById('passkey-success');
+      
+      const validKeys = ['adm09', 'temp', 'maga2026', 'cellular888'];
+      
+      if (validKeys.includes(input)) {
+        isUnlocked = true;
+        localStorage.setItem('maga_unlocked', 'true');
+        err.classList.add('hidden');
+        succ.classList.remove('hidden');
+        applyUnlockUI();
+        
+        // Confetti celebration
+        try {
+          confetti({
+            particleCount: 80,
+            spread: 60,
+            origin: { y: 0.6 }
+          });
+        } catch(e) {}
+      } else {
+        succ.classList.add('hidden');
+        err.classList.remove('hidden');
+      }
+    }
+
+    function applyUnlockUI() {
+      if (!isUnlocked) return;
+      document.querySelectorAll('.lock-status').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.prem-link').forEach(el => {
+        el.classList.remove('hidden');
+        el.classList.add('inline-flex');
+      });
+      document.querySelectorAll('#premium-grid .gs-card').forEach(el => {
+        el.classList.add('gs-card-hover', 'bg-[#F0FDF4]');
+      });
+      lucide.createIcons();
+    }
+
+    if (isUnlocked) {
+      applyUnlockUI();
+    }
+  </script>
+</body>
+</html>
