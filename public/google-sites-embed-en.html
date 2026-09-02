@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAGA Anti-Inflammatory Resource Hub | Google Sites Edition</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F6F1E8;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gs-card {
+      background-color: #FFFFFF;
+      border: 2.5px solid #111827;
+      border-radius: 1rem;
+      box-shadow: 4px 4px 0px #111827;
+      transition: all 0.15s ease-in-out;
+    }
+    .gs-card-hover:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111827;
+    }
+    .gs-btn-yellow {
+      background-color: #FACC15;
+      color: #111827;
+      border: 2.5px solid #111827;
+      box-shadow: 3px 3px 0px #111827;
+      border-radius: 0.75rem;
+      font-weight: 900;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .gs-btn-yellow:hover {
+      background-color: #FDE047;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #111827;
+    }
+    .gs-btn-yellow:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #111827;
+    }
+    .gs-btn-green {
+      background-color: #22C55E;
+      color: #FFFFFF;
+      border: 2.5px solid #111827;
+      box-shadow: 3px 3px 0px #111827;
+      border-radius: 0.75rem;
+      font-weight: 900;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+    }
+    .gs-btn-green:hover {
+      background-color: #16A34A;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #111827;
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 md:p-8 max-w-5xl mx-auto space-y-6">
+
+  <!-- 1. Header / Logo Bar -->
+  <header class="gs-card p-4 sm:p-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-[#EF4444] border-2 border-[#111827] shadow-[2.5px_2.5px_0px_#111827] flex items-center justify-center text-white font-black text-xl tracking-wider select-none shrink-0">
+        M
+      </div>
+      <div class="flex flex-col justify-center">
+        <div class="flex items-center gap-2">
+          <span class="font-black text-xl sm:text-2xl tracking-tight text-[#0F172A] leading-none">MAGA</span>
+          <span class="text-xs font-black uppercase px-2 py-0.5 rounded-lg bg-[#FACC15] text-[#0F172A] border-2 border-[#0F172A] shadow-[1.5px_1.5px_0px_#0F172A] leading-tight">
+            SITE
+          </span>
+        </div>
+        <p class="text-[11px] sm:text-xs font-bold text-[#334155] tracking-tight mt-0.5">
+          Make Anti-inflammatory Great Again
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#FACC15] hover:bg-[#FDE047] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#111827] transition-all"
+      >
+        <span>Subscribe</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="gs-card p-6 sm:p-8 space-y-5">
+    <div class="space-y-1">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-tight">
+        "Before spending hundreds on generic supplements,<br />
+        <span class="text-[#EF4444]">get real-world anti-inflammatory intelligence first."</span>
+      </h1>
+    </div>
+
+    <div class="p-4 rounded-xl bg-[#FFFBEB] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs sm:text-sm font-bold text-slate-800 space-y-1">
+      <p class="text-[#B45309] font-black">💥 Clinical Directive: Want to know if your body is battling silent chronic inflammation?</p>
+      <p class="text-slate-600">Align your cellular sovereignty and verify with a Passkey to decrypt dedicated tactical intelligence.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 pt-2">
+      <button
+        onclick="document.getElementById('resource-section').scrollIntoView({behavior: 'smooth'})"
+        class="gs-btn-yellow px-6 py-3 text-sm sm:text-base flex items-center gap-2"
+      >
+        <span>Unlock Protocols</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+      <a
+        href="https://sites.google.com/view/magamap/home"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-5 py-3 rounded-xl border-2 border-[#111827] bg-white font-black text-xs sm:text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5 shadow-[2px_2px_0px_#111827]"
+      >
+        <span>MAGA Map (Web)</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Inverted Food Pyramid Section -->
+  <section class="gs-card p-6 sm:p-8 space-y-6">
+    <div class="text-center space-y-2">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEF08A] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#854D0E]">
+        <span>CELLULAR ENERGY EQUATION</span>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-black text-[#111827]">RFK Jr. Law of Consistency: Inverting the Food Pyramid</h2>
+      <p class="text-xs sm:text-sm font-bold text-[#DC2626]">
+        💥 Shattering the Foundation Myth: Your cellular Ferrari engine demands high-density fuel, not toxic inflammatory seed oils.
+      </p>
+    </div>
+
+    <!-- Equation Box -->
+    <div class="p-3.5 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-center font-mono font-black text-xs sm:text-sm text-[#0F172A]">
+      Cellular Energy = (Beef Fuel × Mitochondria) − Seed Oil Toxicity
+    </div>
+
+    <!-- Layers -->
+    <div class="space-y-3.5">
+      <!-- Layer 1 -->
+      <div class="gs-card p-4 bg-[#FFF1F2] border-2 border-[#111827]">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#BE123C]">LAYER 01 // Broadest Base Fuel</span>
+          <span class="px-2 py-0.5 rounded bg-[#BE123C] text-white text-[10px] font-black">GOAT Grade Power</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">Australian Organic Beef / Argentine Champion Beef / Grass-Fed Tallow</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">Powers your cellular Ferrari with clean, dense bio-fuel, physically shutting down energy leaks.</p>
+      </div>
+
+      <!-- Layer 2 -->
+      <div class="gs-card p-4 bg-[#ECFDF5] border-2 border-[#111827] sm:w-[94%] mx-auto">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#047857]">LAYER 02 // Mid-Tier Clearance</span>
+          <span class="px-2 py-0.5 rounded bg-[#047857] text-white text-[10px] font-black">Gut Barrier</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">Cauliflower Mash / Scallions / Garlic / Tomatoes / Fermented Greens</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">Reboots gut mucosal walls and clears heavy metals, endotoxins, and metabolic waste.</p>
+      </div>
+
+      <!-- Layer 3 -->
+      <div class="gs-card p-4 bg-[#FFFBEB] border-2 border-[#111827] sm:w-[88%] mx-auto">
+        <div class="flex items-center justify-between gap-2 mb-1">
+          <span class="font-mono text-xs font-black text-[#B45309]">LAYER 03 // Top-Tier Precision Modulation</span>
+          <span class="px-2 py-0.5 rounded bg-[#B45309] text-white text-[10px] font-black">Targeted Repair</span>
+        </div>
+        <h3 class="font-black text-base text-[#111827]">High-Selenium Green Tea / Zinc-Oyster Broth / Raw Honey / Bioactive D3</h3>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">High-permeability nutrient delivery to restore endogenous self-healing resilience.</p>
+      </div>
+    </div>
+
+    <!-- Stripe Direct Unlock Button in Pyramid -->
+    <div class="pt-2 text-center">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gs-btn-yellow px-6 py-2.5 text-xs sm:text-sm font-black inline-flex items-center justify-center gap-1.5"
+      >
+        <span>Subscribe & Unlock</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. Resource Matrix Section (Tabs + Passkey + Stripe) -->
+  <section id="resource-section" class="gs-card p-6 sm:p-8 space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-[#111827] pb-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-[#111827]">Tactical Resource Hub</h2>
+        <p class="text-xs font-bold text-slate-600">Access free tiers instantly or verify your Passkey to decrypt premium protocols.</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="flex items-center gap-2">
+        <button
+          id="tab-btn-free"
+          onclick="switchTab('free')"
+          class="px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#EF4444] text-white transition-all cursor-pointer"
+        >
+          Free Public Tiers (5)
+        </button>
+        <button
+          id="tab-btn-premium"
+          onclick="switchTab('premium')"
+          class="px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer"
+        >
+          Decrypted Tiers (14)
+        </button>
+      </div>
+    </div>
+
+    <!-- Passkey Input & Direct Stripe Section (Shown for Premium) -->
+    <div id="passkey-unlock-card" class="hidden p-5 rounded-2xl bg-[#FFFBEB] border-2 border-[#111827] shadow-[3px_3px_0px_#111827] space-y-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="key" class="w-5 h-5 text-[#D97706]"></i>
+        <h3 class="font-black text-sm sm:text-base text-[#111827]">One-Code Instant Decryption (Passkey Verification)</h3>
+      </div>
+      <p class="text-xs text-slate-600 font-bold">
+        Enter your verified Passkey to instantly decrypt all 14 anti-inflammatory tactical protocols below.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input
+          id="passkey-input"
+          type="password"
+          placeholder="Enter Passkey (e.g. adm09 / temp)..."
+          class="flex-1 bg-white border-2 border-[#111827] shadow-[2px_2px_0px_#111827] px-4 py-2.5 text-sm font-mono font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FACC15]"
+          onkeydown="if(event.key==='Enter') verifyPasskey()"
+        />
+        <button
+          onclick="verifyPasskey()"
+          class="gs-btn-green px-5 py-2.5 text-xs font-black flex items-center justify-center gap-1.5"
+        >
+          <i data-lucide="unlock" class="w-4 h-4"></i>
+          <span>Verify & Unlock</span>
+        </button>
+      </div>
+
+      <!-- Direct Stripe Unlock Link directly below passkey form -->
+      <div class="pt-2 border-t border-[#111827]/15 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <span class="text-xs font-bold text-slate-700">⚡ Direct Anti-Inflammatory Access Channel:</span>
+        <a
+          href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="gs-btn-yellow px-5 py-2.5 text-xs font-black tracking-wide inline-flex items-center justify-center gap-2 shadow-[2px_2px_0px_#111827] text-center"
+        >
+          <span>Subscribe & Unlock Direct via Stripe</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div id="passkey-error" class="hidden p-2 rounded-lg bg-[#FEE2E2] border border-[#EF4444] text-xs font-black text-[#B91C1C]">
+        ❌ Invalid or expired passkey. Please check and try again.
+      </div>
+      <div id="passkey-success" class="hidden p-2 rounded-lg bg-[#DCFCE7] border border-[#22C55E] text-xs font-black text-[#15803D]">
+        🎉 Verification successful! All tactical protocols are now unlocked.
+      </div>
+    </div>
+
+    <!-- Free Resources Grid -->
+    <div id="free-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="https://lihi3.me/94iyi" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_01</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">Early Preview</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">21 DAYS Free 1-3 Preview</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">First 3 foundational modules of the 21-day anti-inflammatory protocol fully open.</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>Read Now</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_02</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">Execution</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">7 Actions Daily Implementation Guide</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Grounded tactical actions, schedule routines, and non-negotiable health habits.</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>Read Now</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/coffee-%E6%B7%BA%E7%82%92%E5%92%96%E5%95%A1" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_03</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">Daily Modulation</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Light Roast Coffee Polyphenol Defense</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Maximize polyphenol bioactivity to initiate cellular metabolic repair.</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>Read Now</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E7%B6%AD%E4%BB%96%E5%91%BD-vitamin-d" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_04</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">Immunity</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Vitamin D & Sunlight Optimization</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Harness solar synthesis and earthing frequencies to boost native defense.</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>Read Now</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+
+      <a href="https://sites.google.com/view/magamap/%E8%88%8C%E9%A0%AD%E5%84%80%E8%A1%A8%E6%9D%BF%E8%BA%AB%E9%AB%94%E8%87%AA%E6%AA%A2%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener noreferrer" class="gs-card gs-card-hover p-4 md:col-span-2 flex flex-col justify-between space-y-3 bg-[#FEF2F2]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#EF4444]">FREE_05</span>
+            <span class="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] border border-[#EF4444] text-[10px] font-black">Self Diagnostics</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Tongue Health Dashboard (Self-Assessment Tool)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Instant visual diagnostics to identify internal inflammation and digestive stagnation.</p>
+        </div>
+        <div class="flex items-center justify-between text-xs font-black text-[#EF4444] pt-2 border-t border-slate-100">
+          <span>Launch Self-Test</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Premium Resources Grid (14 Items) -->
+    <div id="premium-grid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div id="prem-card-1" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_01</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Gastric Repair</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Stomach Repair & Mucosal Rebuilding</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Physical-layer rapid mucosal clearance to terminate inflammatory cascades.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/%E8%AD%B7%E8%83%83%E6%93%8D%E4%BD%9C" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-2" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_02</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Gut Defense</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Prebiotics Tactical Arsenal</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">High-potency substrates to nourish beneficial flora and power bio-energy.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/%E7%9B%8A%E7%94%9F%E5%85%83-prebiotics" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-3" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_03</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Immune Shield</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Vitamin K2 & Vitamin U Protocol</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Rebuild stomach wall lining and eliminate acid reflux at its root.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/%E8%85%B8%E8%83%83%E5%85%8D%E7%96%AB-%E7%B6%ADk2-u" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-4" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_04</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Probiotic Engine</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Raw Fermented Sauerkraut Masterclass</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">The king of native live enzymes, optimizing endogenous gastric acid balance.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/%E7%99%BC%E9%85%B5%E8%8F%9C-sauerkraut" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-5" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_05</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Primary Fuel</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Extra Virgin Olive Oil (EVOO) Index</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Liquid gold polyphenols, physically repairing cellular oxidation and lesions.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/extra-virgin-olive-oil-%E6%A9%84%E6%AC%96%E6%B2%B9-evoo" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-6" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_06</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Cellular Clearance</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Aged Ginger & Curcumin Bio-Soda</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Interrupt GI inflammation pathways with high-permeability micronutrient delivery.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E8%96%91%E9%BB%83-soda" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-7" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_07</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Core Protein</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">100% Grass-Finished Beef Sovereignty</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Reject grain-fed marketing traps; secure uncompromised mitochondrial power.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E8%8D%89%E9%A3%BC%E7%89%9B" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-8" class="gs-card p-4 flex flex-col justify-between space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_08</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Omega-3 Index</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Wild Sardine Omega-3 Protocol</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Counteract industrial seed oil toxicity and eliminate systemic oxidation risks.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/sandine-%E6%B2%99%E7%94%B8%E9%AD%9A%E6%B2%B9" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-9" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_09</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">System Reset</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Kidney Reset & Digestive Linkage</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Break the chronic fatigue loop and restore native filtration sovereignty.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/%E8%85%B8%E8%83%83%E5%85%8D%E7%96%AB-%E7%B6%ADk2-u" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-10" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_10</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Gut Carbs</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Plantain Nutrition & Resistant Starch</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Complete guide to resistant starch, optimizing gut microbiome ecology and glycemic balance.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1zZcf2JcDtueLyZlGLx4ckPkXnBi_iIj8/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-11" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_11</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Survival Engine</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">15 Workplace & Modern Lifestyle Syndromes</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Dedicated recovery engine for urban professionals, clearing chronic workplace inflammation.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1nX9urwOH9CBJP1XcVWkPofiOS-4osl-R/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-12" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_12</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Glandular Tune-Up</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Thyroid Repair & Modulation</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Strict 1.5-hour fasting protocol post-medication to achieve maximum bio-efficacy.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1VWSoO2rxhJ1fP36aKJ5JqDbl7WuFpXMT/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-13" class="gs-card p-4 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_13</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Immune Defense</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Vitamin D3 Immune Resistance</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">RFK Jr. inverted pyramid mechanism, targeted blockade of inflammatory pathways.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/d/1p4zd09z00Ee0Nd5pMgj5juhy0xZAvk28/p/1VWSoO2rxhJ1fP36aKJ5JqDbl7WuFpXMT/edit" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+
+      <div id="prem-card-14" class="gs-card p-4 md:col-span-2 flex flex-col justify-between space-y-3 bg-[#ECFDF5]/30">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-black text-[#16A34A]">PREM_14</span>
+            <span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] border border-[#16A34A] text-[10px] font-black">Green Coffee</span>
+          </div>
+          <h3 class="font-black text-base text-[#111827]">Green Tea Coffee (Green Coffee)</h3>
+          <p class="text-xs text-slate-600 font-bold mt-1">Standardized method popularized by Dr. Takafumi Kudo, synergistic polyphenols and chlorogenic acid for fat-burning and inflammation defense.</p>
+        </div>
+        <div class="prem-action-box pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-black text-slate-400">
+          <span class="lock-status flex items-center gap-1"><i data-lucide="lock" class="w-3.5 h-3.5"></i> Passkey Protected</span>
+          <a href="https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/coffee-%E6%B7%BA%E7%82%92%E5%92%96%E5%95%A1/green-coffee-%E7%B6%A0%E8%8C%B6%E5%92%96%E5%95%A1-kodk" target="_blank" class="prem-link hidden text-[#16A34A] font-black items-center gap-1">Access Protocol <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Footer -->
+  <footer class="gs-card p-5 text-center space-y-3">
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#FACC15] hover:bg-[#FDE047] border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-[#111827]"
+      >
+        <span>Subscribe & Unlock</span>
+        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+      </a>
+      <a
+        href="https://sites.google.com/view/magamap/home"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white hover:bg-slate-100 border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-black text-slate-800"
+      >
+        <span>MAGA Map Hub</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+    <p class="text-[11px] font-bold text-slate-500">
+      MAGA Anti-Inflammatory Resource Hub © 2026 // Make Anti-inflammatory Great Again
+    </p>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    let isUnlocked = localStorage.getItem('maga_unlocked') === 'true';
+
+    function switchTab(tab) {
+      const freeBtn = document.getElementById('tab-btn-free');
+      const premBtn = document.getElementById('tab-btn-premium');
+      const freeGrid = document.getElementById('free-grid');
+      const premGrid = document.getElementById('premium-grid');
+      const passkeyCard = document.getElementById('passkey-unlock-card');
+
+      if (tab === 'free') {
+        freeBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#EF4444] text-white transition-all cursor-pointer";
+        premBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer";
+        freeGrid.classList.remove('hidden');
+        premGrid.classList.add('hidden');
+        passkeyCard.classList.add('hidden');
+      } else {
+        freeBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] bg-white text-slate-800 hover:bg-slate-100 transition-all cursor-pointer";
+        premBtn.className = "px-4 py-2 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] bg-[#16A34A] text-white transition-all cursor-pointer";
+        freeGrid.classList.add('hidden');
+        premGrid.classList.remove('hidden');
+        passkeyCard.classList.remove('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    function verifyPasskey() {
+      const input = document.getElementById('passkey-input').value.trim();
+      const err = document.getElementById('passkey-error');
+      const succ = document.getElementById('passkey-success');
+      
+      const validKeys = ['adm09', 'temp', 'maga2026', 'cellular888'];
+      
+      if (validKeys.includes(input)) {
+        isUnlocked = true;
+        localStorage.setItem('maga_unlocked', 'true');
+        err.classList.add('hidden');
+        succ.classList.remove('hidden');
+        applyUnlockUI();
+        
+        // Confetti celebration
+        try {
+          confetti({
+            particleCount: 80,
+            spread: 60,
+            origin: { y: 0.6 }
+          });
+        } catch(e) {}
+      } else {
+        succ.classList.add('hidden');
+        err.classList.remove('hidden');
+      }
+    }
+
+    function applyUnlockUI() {
+      if (!isUnlocked) return;
+      document.querySelectorAll('.lock-status').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.prem-link').forEach(el => {
+        el.classList.remove('hidden');
+        el.classList.add('inline-flex');
+      });
+      document.querySelectorAll('#premium-grid .gs-card').forEach(el => {
+        el.classList.add('gs-card-hover', 'bg-[#F0FDF4]');
+      });
+      lucide.createIcons();
+    }
+
+    if (isUnlocked) {
+      applyUnlockUI();
+    }
+  </script>
+</body>
+</html>
