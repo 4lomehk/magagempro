@@ -38,11 +38,11 @@
 | **FREE_02** | 7 Action 7件事實踐指南 | 每日落地硬核執行的生活動作與作息時間表 | [即時閱讀](https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B) |
 | **FREE_03** | Coffee 淺炒咖啡多酚抗炎 | 保留最高綠原酸與多酚活性，啟動細胞抗氧化 | [即時閱讀](https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/coffee-%E6%B7%BA%E7%82%92%E5%92%96%E5%95%A1) |
 | **FREE_04** | Vitamin D 免疫強效化 | 曬太陽與接地氣 (Grounding)，拉滿體內活性 D3 | [即時閱讀](https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/%E7%B6%AD%E4%BB%96%E5%91%BD-vitamin-d) |
-| **FREE_05** | 舌頭反映身體檢查 (舌頭儀表板) | 照鏡觀察舌苔與舌質，快速判斷脾胃濕熱與慢性發炎 | [即時自我檢測](https://sites.google.com/view/magamap/%E8%88%8C%E9%A0%AD%E5%84%80%E8%A1%A8%E6%9D%BF%E8%BA%AB%E9%AB%94%E8%87%AA%E6%AA%A2%E5%B7%A5%E5%85%B7) |
+| **FREE_05** | 舌頭反映身體檢查 (身體很誠實檢查) | 照鏡觀察舌苔與舌質，快速判斷脾胃濕熱與慢性發炎 | [即時自我檢測](https://sites.google.com/view/magamap/%E8%BA%AB%E9%AB%94%E5%BE%88%E8%AA%A0%E5%AF%A6%E6%AA%A2%E6%9F%A5) |
 
 ---
 
-## 三、專屬特種戰略物資庫 (Premium Strategy Materials 1-14)
+## 三、專屬特種戰略物資庫 (Premium Strategy Materials 1-16)
 
 > **解鎖方式：** 驗證 Passkey 或透過 [Stripe 專屬訂閱通道](https://buy.stripe.com/fZu8wP2GBbk44vfblN9fW03)
 
@@ -60,6 +60,8 @@
 12. **PREM_12 甲狀腺修復**：服藥後必須嚴格空腹 1.5 小時方可進食，確保最高生物利用度。
 13. **PREM_13 D3 免疫阻抗**：RFK Jr. 倒轉金字塔機制，靶向精準阻斷發炎路徑。
 14. **PREM_14 Green Coffee (綠茶咖啡)**：日本名醫工藤孝文推廣之標準做法，兒茶素多酚與綠原酸協同燃脂抗炎。
+15. **PREM_15 紅光療法與粒線體光生物調節**：激活細胞色素C氧化酶，加速 ATP 生產並抑制全身性慢性發炎。
+16. **PREM_16 冷水刺激與迷走神經調頻**：重啟副交感神經，急降發炎細胞因子 (TNF-alpha, IL-6) 漏電。
 
 ---
 
