@@ -39,17 +39,32 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Action Tools */}
         <div className="flex items-center gap-2.5">
-          {/* Language Toggle Button (Switches app to English 16 tiers / Cantonese) */}
-          <button
-            onClick={onToggleLang}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] text-xs font-extrabold transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer ${
-              lang === 'en' ? 'bg-[#DCFCE7] text-[#15803D]' : 'bg-white text-[#111827] hover:bg-[#FEF08A]'
-            }`}
-            title={lang === 'en' ? '切換至繁體廣東話' : 'Switch to English Edition (16 PREM Tiers)'}
-          >
-            <Globe className="w-3.5 h-3.5" />
-            <span>{lang === 'en' ? '廣東話' : 'ENG (16 Tiers)'}</span>
-          </button>
+          {/* Prominent Language Switcher with explicit ENG button */}
+          <div className="inline-flex items-center rounded-lg border-2 border-[#111827] bg-white p-0.5 shadow-[2px_2px_0px_#111827]">
+            <button
+              onClick={() => lang !== 'zh' && onToggleLang()}
+              className={`px-2.5 py-1 rounded-md text-xs font-black transition-all cursor-pointer ${
+                lang === 'zh'
+                  ? 'bg-[#FACC15] text-[#111827] shadow-[1px_1px_0px_#111827]'
+                  : 'text-slate-600 hover:text-[#111827]'
+              }`}
+              title="切換至繁體廣東話版"
+            >
+              廣東話
+            </button>
+            <button
+              onClick={() => lang !== 'en' && onToggleLang()}
+              className={`px-2.5 py-1 rounded-md text-xs font-black transition-all cursor-pointer flex items-center gap-1 ${
+                lang === 'en'
+                  ? 'bg-[#10B981] text-white shadow-[1px_1px_0px_#111827]'
+                  : 'text-slate-600 hover:text-[#111827]'
+              }`}
+              title="Switch to English Edition"
+            >
+              <Globe className="w-3 h-3" />
+              <span>ENG</span>
+            </button>
+          </div>
 
           {/* Admin / Site Status Button */}
           <button

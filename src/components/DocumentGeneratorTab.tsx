@@ -87,7 +87,7 @@ export const DocumentGeneratorTab: React.FC<DocumentGeneratorTabProps> = ({
   const [badge, setBadge] = useState('HTML5 互動微應用');
   const [title, setTitle] = useState(DOC_TEMPLATES.html5.title);
   const [description, setDescription] = useState(DOC_TEMPLATES.html5.description);
-  const [url, setUrl] = useState('https://sites.google.com/view/4lome-maga-unlocked');
+  const [url, setUrl] = useState('https://sites.google.com/view/magamap/%E9%A6%96%E9%A0%81');
   const [icon, setIcon] = useState('Zap');
   const [isFullWidth, setIsFullWidth] = useState(false);
 
@@ -594,7 +594,7 @@ ${codePayload}
         finalDescription = `專屬策略生物駭客操作手冊與核心指引協議。針對 ${finalTitle} 進行全方位高階賦能，涵蓋生物物理與細胞代謝優化。`;
       }
       if (!finalUrl) {
-        finalUrl = 'https://sites.google.com/view/4lome-maga-unlocked';
+        finalUrl = 'https://sites.google.com/view/magamap/%E9%A6%96%E9%A0%81';
       }
       if (!finalCodePayload) {
         finalCodePayload = DOC_TEMPLATES[docType]?.code || '<div style="padding:20px;font-family:sans-serif;"><h3>解鎖物資協議就緒</h3><p>生物參數配置中...</p></div>';

@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {lang === 'en' ? 'Free Preview Tiers' : '免費體驗區'}
             </div>
             <div className="text-[11px] text-slate-600 mt-1">
-              {lang === 'en' ? '21-Day protocol, 7 Actions, coffee polyphenols open' : '21日抗炎、7件事指南、咖啡多酚全開放'}
+              {lang === 'en' ? '21-Day protocol, 7 Actions, Nocturia micro-app, Supermarket EVOO guide' : '21日抗炎、7件事、夜尿膝軟微應用、超市點揀EVOO'}
             </div>
           </div>
           <div className="p-3 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[2px_2px_0px_#111827]">
@@ -92,7 +92,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {lang === 'en' ? 'Passkey Verification' : 'Passkey 驗證'}
             </div>
             <div className="text-[11px] text-slate-600 mt-1">
-              {lang === 'en' ? 'Enter temporary passkey or master key for 1-second unlock' : '輸入體驗碼或專屬代碼一秒即時解密'}
+              {lang === 'en' ? 'Enter authorized passkey or master key for 1-second unlock' : '輸入專屬代碼或 Master Key 一秒即時解密'}
             </div>
           </div>
           <div className="p-3 rounded-xl bg-[#F8FAFC] border-2 border-[#111827] shadow-[2px_2px_0px_#111827]">
@@ -101,7 +101,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {lang === 'en' ? '16 Decrypted Tiers' : '解鎖專屬物資 (16)'}
             </div>
             <div className="text-[11px] text-slate-600 mt-1">
-              {lang === 'en' ? 'PREM_01 to PREM_16 protocols & direct links' : '護胃、益生元、發酵菜、草飼牛、紅光、迷走神經直達物資'}
+              {lang === 'en' ? 'PREM_01 to PREM_16 protocols & direct links' : '護胃、益生元、發酵菜、草飼牛、藍莓SODA、主權兵蜂廠直達物資'}
             </div>
           </div>
         </div>

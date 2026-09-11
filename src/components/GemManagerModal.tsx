@@ -336,7 +336,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
       badge: itemLang === 'en' ? (cat === 'free' ? 'Public Access' : 'Strategic Tier') : (cat === 'free' ? '新公開項目' : '新專屬物資'),
       title: '',
       description: '',
-      url: 'https://sites.google.com/view/magamap/home',
+      url: 'https://sites.google.com/view/magamap/%E9%A6%96%E9%A0%81',
       category: cat,
       isFullWidth: false,
       icon: 'Sparkles',
@@ -450,16 +450,17 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
     onShowToast('已還原英文版 Free 與 Premium 出廠預設值！', 'info');
   };
 
-  // Passkey updates - only updates tempPasskey & tempExpiry while keeping master & additional keys secure in code
+  // Passkey updates - only updates tempPasskey, tempExpiry & tempEnabled while keeping master & additional keys secure in code
   const handleSavePasskeys = () => {
     const updatedConfig: PasskeyConfig = {
       masterPasskey: passkeyConfig.masterPasskey || 'cc00',
       additionalPasskeys: passkeyConfig.additionalPasskeys || [],
       tempPasskey: tempPasskeyForm.tempPasskey.trim() || 'temp',
       tempExpiry: tempPasskeyForm.tempExpiry,
+      tempEnabled: tempPasskeyForm.tempEnabled ?? false,
     };
     onUpdatePasskeyConfig(updatedConfig);
-    onShowToast('臨時體驗碼與失效時間已成功更新！', 'success');
+    onShowToast('臨時體驗碼設定（含解鎖啟用/暫停狀態）已成功更新！', 'success');
   };
 
   const handleSetExpiryPreset = (hours: 12 | 24) => {
@@ -500,7 +501,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
         badge: aiCategory === 'premium' ? '粒線體靶向' : '細胞清淤',
         title: aiTopic ? `${aiTopic} 實戰指南` : '薑黃黑椒細胞抗炎實戰指南',
         description: '高濃度活性多酚，物理層徹底阻斷發炎連鎖訊號。',
-        url: 'https://sites.google.com/view/magamap/home',
+        url: 'https://sites.google.com/view/magamap/%E9%A6%96%E9%A0%81',
         category: aiCategory,
         isFullWidth: false,
         icon: 'Sparkles',
@@ -524,6 +525,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
       passkeyConfig: {
         tempPasskey: passkeyConfig.tempPasskey,
         tempExpiry: passkeyConfig.tempExpiry,
+        tempEnabled: passkeyConfig.tempEnabled,
       },
       appContent,
     };
@@ -546,6 +548,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
           additionalPasskeys: parsed.passkeyConfig.additionalPasskeys || [],
           tempPasskey: parsed.passkeyConfig.tempPasskey || passkeyConfig.tempPasskey || 'temp',
           tempExpiry: parsed.passkeyConfig.tempExpiry || passkeyConfig.tempExpiry,
+          tempEnabled: parsed.passkeyConfig.tempEnabled !== undefined ? parsed.passkeyConfig.tempEnabled : passkeyConfig.tempEnabled,
         };
         onUpdatePasskeyConfig(mergedPasskeys);
         setTempPasskeyForm(mergedPasskeys);
@@ -1425,15 +1428,52 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
 
                 <div className="grid grid-cols-1 gap-4">
                   {/* Temp Passkey Setting - Removed "預設為 temp" as requested */}
-                  <div className="p-4 rounded-xl bg-white border-2 border-[#111827] shadow-[2px_2px_0px_#111827] space-y-2">
+                  <div className="p-4 rounded-xl bg-white border-2 border-[#111827] shadow-[2px_2px_0px_#111827] space-y-3">
                     <div className="flex items-center justify-between">
                       <label className="block text-xs font-black text-[#111827]">
                         ⏳ 臨時體驗碼 (Temp Passkey)
                       </label>
-                      <span className="text-[10px] font-black bg-[#FEF08A] text-[#854D0E] px-2 py-0.5 rounded border border-[#111827]">
-                        前台唯一公開代碼
+                      <span className={`text-[10px] font-black px-2 py-0.5 rounded border border-[#111827] ${
+                        tempPasskeyForm.tempEnabled ? 'bg-[#FEF08A] text-[#854D0E]' : 'bg-rose-100 text-rose-800'
+                      }`}>
+                        {tempPasskeyForm.tempEnabled ? '開放中' : '已暫停解鎖'}
                       </span>
                     </div>
+
+                    {/* Pause/Resume Toggle Banner */}
+                    <div className="flex items-center justify-between p-3 rounded-lg border-2 border-[#111827] bg-[#F8FAFC]">
+                      <div>
+                        <div className="text-xs font-black text-[#111827] flex items-center gap-1.5">
+                          <span>解鎖狀態：</span>
+                          {tempPasskeyForm.tempEnabled ? (
+                            <span className="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[11px] font-bold">
+                              🟢 開放解鎖中
+                            </span>
+                          ) : (
+                            <span className="text-rose-700 bg-rose-100 px-2 py-0.5 rounded text-[11px] font-bold">
+                              ⛔ 已暫停解鎖 (前台停用 temp)
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[11px] text-slate-500 mt-0.5">
+                          {tempPasskeyForm.tempEnabled
+                            ? '公開訪客可使用 temp 解鎖專屬物資。'
+                            : '已全面暫停 temp 體驗碼解鎖，前台拒絕 temp 輸入。'}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setTempPasskeyForm({ ...tempPasskeyForm, tempEnabled: !tempPasskeyForm.tempEnabled })}
+                        className={`px-3 py-1.5 text-xs font-black rounded-lg border-2 border-[#111827] shadow-[2px_2px_0px_#111827] cursor-pointer transition-colors ${
+                          tempPasskeyForm.tempEnabled
+                            ? 'bg-rose-200 hover:bg-rose-300 text-rose-900'
+                            : 'bg-emerald-200 hover:bg-emerald-300 text-emerald-900'
+                        }`}
+                      >
+                        {tempPasskeyForm.tempEnabled ? '暫停 temp 解鎖' : '恢復開放 temp'}
+                      </button>
+                    </div>
+
                     <input
                       type="text"
                       value={tempPasskeyForm.tempPasskey}
@@ -1442,7 +1482,7 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
                       className="w-full bg-[#F8FAFC] border-2 border-[#111827] px-3 py-2 text-sm font-mono font-black rounded-lg"
                     />
                     <p className="text-[11px] text-slate-500 font-medium">
-                      供公開訪客體驗試用，在失效時間前均可即時解鎖全部物資。
+                      供公開訪客體驗試用，在失效時間前均可即時解鎖全部物資（暫停狀態下前台不予解鎖）。
                     </p>
                   </div>
 
@@ -1840,13 +1880,24 @@ export const GemManagerModal: React.FC<GemManagerModalProps> = ({
           {/* TAB 6: GOOGLE SITES EMBED & STANDALONE */}
           {activeTab === 'googlesites' && (
             <div className="space-y-6">
-              <div className="p-4 rounded-xl bg-[#FFF1F2] border-2 border-[#E11D48] shadow-[2px_2px_0px_#E11D48] space-y-1.5">
-                <h4 className="text-sm font-black text-[#BE123C] flex items-center gap-2">
-                  <Globe className="w-4 h-4" />
-                  <span>Google Sites 專屬嵌入與發布指南</span>
-                </h4>
+              <div className="p-4 rounded-xl bg-[#FFF1F2] border-2 border-[#E11D48] shadow-[2px_2px_0px_#E11D48] space-y-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h4 className="text-sm font-black text-[#BE123C] flex items-center gap-2">
+                    <Globe className="w-4 h-4" />
+                    <span>Google Sites (magamap/首頁) 專屬發布與自動同步方案</span>
+                  </h4>
+                  <a
+                    href="https://sites.google.com/view/magamap/%E9%A6%96%E9%A0%81"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-white hover:bg-slate-50 text-[#BE123C] text-xs font-black rounded-lg border border-[#E11D48] flex items-center gap-1 shadow-[1.5px_1.5px_0px_#E11D48]"
+                  >
+                    <span>開啟 magamap/首頁 網站</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
                 <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  提供 2 種方式直接將完整的「MAGA 抗炎實戰資源庫」放入 Google 協作平台 (Google Sites)。
+                  <strong>💡 關於能否「直接背景自動發報」至 Google Sites：</strong> Google Sites 官方安全規範<strong>未對外開放任何內容發布 REST API</strong>（無法由外部程式遠端代貼內容）。但透過下方的<strong>「方法一：依網址嵌入」</strong>，只需在您的 Google Sites 貼上一次網址，日後所有新增物資、修改 Passkey、生成文件，Google Sites 訪客端皆會<strong>全自動即時同步，無需重新操作 Google Sites！</strong>
                 </p>
               </div>
 

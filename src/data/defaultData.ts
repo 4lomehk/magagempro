@@ -4,6 +4,7 @@ export const DEFAULT_PASSKEY_CONFIG: PasskeyConfig = {
   masterPasskey: 'cc00',
   tempPasskey: 'temp',
   tempExpiry: '2026-12-31T23:59:59',
+  tempEnabled: false, // 暫停 "temp" 解鎖
   additionalPasskeys: ['4lome'],
 };
 
@@ -60,8 +61,30 @@ export const DEFAULT_FREE_RESOURCES: ResourceItem[] = [
     description: '快速判斷體內發炎與脾胃狀態。',
     url: 'https://sites.google.com/view/magamap/%E8%BA%AB%E9%AB%94%E5%BE%88%E8%AA%A0%E5%AF%A6%E6%AA%A2%E6%9F%A5',
     category: 'free',
-    isFullWidth: true,
+    isFullWidth: false,
     icon: 'Activity',
+  },
+  {
+    id: 'free_06',
+    code: 'FREE_06',
+    badge: '互動微應用',
+    title: '夜尿 ＋ 膝頭哥酸軟',
+    description: '要真正搞掂夜尿同膝頭哥酸軟，首先要切斷你腦袋入面啲廢話定義',
+    url: 'https://sites.google.com/view/magamap/%E8%BA%AB%E9%AB%94%E5%BE%88%E8%AA%A0%E5%AF%A6%E6%AA%A2%E6%9F%A5/magabody',
+    category: 'free',
+    isFullWidth: false,
+    icon: 'Zap',
+  },
+  {
+    id: 'free_07',
+    code: 'FREE_07',
+    badge: '互動照妖鏡',
+    title: '超市點揀EVOO',
+    description: '內建即時照妖鏡與 CP 值診斷器，專破價錢迷思與標籤陷阱，附 4-5 年化療康復期生飲經驗與薑黃黑椒配比。',
+    url: 'https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/evoo-2-%E6%A9%84%E6%AC%96%E6%B2%B9',
+    category: 'free',
+    isFullWidth: true,
+    icon: 'Flame',
   },
 ];
 
@@ -224,7 +247,7 @@ export const DEFAULT_PREMIUM_RESOURCES: ResourceItem[] = [
     id: 'prem_15',
     code: 'PREM_15',
     badge: '粒線體光療',
-    title: '紅光療法與粒線體光生物調節',
+    title: '藍莓發酵抗炎SODA重啟',
     description: '激活細胞色素C氧化酶，加速 ATP 生產並抑制全身性慢性發炎',
     url: 'https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/bee1?authuser=1',
     category: 'premium',
@@ -235,7 +258,7 @@ export const DEFAULT_PREMIUM_RESOURCES: ResourceItem[] = [
     id: 'prem_16',
     code: 'PREM_16',
     badge: '迷走神經重啟',
-    title: '冷水刺激與迷走神經調頻',
+    title: '主權抗炎兵蜂廠',
     description: '重啟副交感神經，急降發炎細胞因子 (TNF-alpha, IL-6) 漏電',
     url: 'https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/bee2',
     category: 'premium',
@@ -276,8 +299,8 @@ export const DEFAULT_PYRAMID_LAYERS: PyramidLayer[] = [
 
 export const DEFAULT_APP_CONTENT: AppContentConfig = {
   heroTag: '000010066',
-  heroTitleMain: '「用幾百蚊買 Supplement，',
-  heroTitleAccent: '不如買之前直接獲取抗炎經歷。」',
+  heroTitleMain: '「使幾百蚊買 Supplement 亂試之前',
+  heroTitleAccent: '身邊一直有唔離地抗炎食材。」',
   heroDeclaration: '💥 實戰聲明：想知你個身體依家係咪慢性發炎緊？呢度公開抗炎經歷。',
   heroDeclarationSub: '對齊主權後，輸入「一Code以下解銷」即可進入戰略資源。',
   pyramidTitle: 'RFK Jr. 一致律：倒轉飲食金字塔',

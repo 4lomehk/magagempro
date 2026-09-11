@@ -59,6 +59,7 @@ export interface PasskeyConfig {
   tempPasskey: string;
   tempExpiry: string; // ISO string like '2026-09-07T00:01:00'
   additionalPasskeys: string[];
+  tempEnabled?: boolean; // false to pause temp passkey unlock
 }
 
 export interface PyramidLayer {

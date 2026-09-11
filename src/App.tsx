@@ -23,8 +23,8 @@ import { ResourceItem, PasskeyConfig, AppContentConfig, PyramidLayer } from './t
 
 const EN_APP_CONTENT: AppContentConfig = {
   heroTag: '000010066',
-  heroTitleMain: '“Instead of spending hundreds on supplements,',
-  heroTitleAccent: 'acquire direct anti-inflammatory experience first.”',
+  heroTitleMain: '“Before spending hundreds blindly on supplements,',
+  heroTitleAccent: 'grounded anti-inflammatory foods have always been right beside you.”',
   heroDeclaration: '💥 Battle Manifesto: Want to know if your body is suffering from chronic inflammation? Real anti-inflammatory tactics are open here.',
   heroDeclarationSub: 'Align your metabolic sovereignty, enter your passkey below to unlock all strategic materials.',
   pyramidTitle: 'RFK Jr. Inverted Anti-Inflammatory Pyramid',
@@ -73,7 +73,48 @@ export default function App() {
   const [freeResources, setFreeResources] = useState<ResourceItem[]>(() => {
     try {
       const saved = localStorage.getItem('maga_free_resources');
-      return saved ? JSON.parse(saved) : DEFAULT_FREE_RESOURCES;
+      if (saved) {
+        const parsed: ResourceItem[] = JSON.parse(saved);
+        const targetFree06: ResourceItem = {
+          id: 'free_06',
+          code: 'FREE_06',
+          badge: '互動微應用',
+          title: '夜尿 ＋ 膝頭哥酸軟',
+          description: '要真正搞掂夜尿同膝頭哥酸軟，首先要切斷你腦袋入面啲廢話定義',
+          url: 'https://sites.google.com/view/magamap/%E8%BA%AB%E9%AB%94%E5%BE%88%E8%AA%A0%E5%AF%A6%E6%AA%A2%E6%9F%A5/magabody',
+          category: 'free',
+          isFullWidth: false,
+          icon: 'Zap',
+        };
+
+        const targetFree07: ResourceItem = {
+          id: 'free_07',
+          code: 'FREE_07',
+          badge: '互動照妖鏡',
+          title: '超市點揀EVOO',
+          description: '內建即時照妖鏡與 CP 值診斷器，專破價錢迷思與標籤陷阱，附 4-5 年化療康復期生飲經驗與薑黃黑椒配比。',
+          url: 'https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/evoo-2-%E6%A9%84%E6%AC%96%E6%B2%B9',
+          category: 'free',
+          isFullWidth: true,
+          icon: 'Flame',
+        };
+
+        // Filter out any legacy or duplicate free_06 / free_07 items
+        const filtered = parsed.filter(
+          (item) =>
+            item.id !== 'free_06' &&
+            item.code !== 'FREE_06' &&
+            item.id !== 'free_07' &&
+            item.code !== 'FREE_07' &&
+            !item.title.includes('光生物調節') &&
+            !item.title.includes('PBM') &&
+            !item.title.includes('夜尿') &&
+            !item.title.includes('EVOO')
+        );
+
+        return [...filtered, targetFree06, targetFree07];
+      }
+      return DEFAULT_FREE_RESOURCES;
     } catch {
       return DEFAULT_FREE_RESOURCES;
     }
@@ -86,7 +127,27 @@ export default function App() {
         const parsed: ResourceItem[] = JSON.parse(saved);
         const existingIds = new Set(parsed.map((item) => item.id));
         const missingDefaults = DEFAULT_PREMIUM_RESOURCES.filter((item) => !existingIds.has(item.id));
-        return missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+        const combined = missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+        // Ensure PREM_15 & PREM_16 reflect the latest titles & descriptions
+        return combined.map((item) => {
+          if (item.id === 'prem_15' || item.code === 'PREM_15') {
+            return {
+              ...item,
+              badge: '粒線體光療',
+              title: '藍莓發酵抗炎SODA重啟',
+              description: '激活細胞色素C氧化酶，加速 ATP 生產並抑制全身性慢性發炎',
+            };
+          }
+          if (item.id === 'prem_16' || item.code === 'PREM_16') {
+            return {
+              ...item,
+              badge: '迷走神經重啟',
+              title: '主權抗炎兵蜂廠',
+              description: '重啟副交感神經，急降發炎細胞因子 (TNF-alpha, IL-6) 漏電',
+            };
+          }
+          return item;
+        });
       }
       return DEFAULT_PREMIUM_RESOURCES;
     } catch {
@@ -100,9 +161,43 @@ export default function App() {
       const saved = localStorage.getItem('maga_en_free_resources');
       if (saved) {
         const parsed: ResourceItem[] = JSON.parse(saved);
-        const existingIds = new Set(parsed.map((item) => item.id));
-        const missingDefaults = EN_FREE_RESOURCES.filter((item) => !existingIds.has(item.id));
-        return missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+        const targetEnFree06: ResourceItem = {
+          id: 'free_06',
+          code: 'FREE_06',
+          badge: 'Interactive Micro-App',
+          title: 'Nocturia & Weak Knee Relief Protocol',
+          description: 'To truly eliminate nocturia and knee weakness, discard conventional noise and tackle root-cause cellular energy leakages.',
+          url: 'https://sites.google.com/view/magamap/%E8%BA%AB%E9%AB%94%E5%BE%88%E8%AA%A0%E5%AF%A6%E6%AA%A2%E6%9F%A5/magabody',
+          category: 'free',
+          isFullWidth: false,
+          icon: 'Zap',
+        };
+
+        const targetEnFree07: ResourceItem = {
+          id: 'free_07',
+          code: 'FREE_07',
+          badge: 'Interactive Scanner',
+          title: 'How to Choose EVOO in Supermarkets',
+          description: 'Built-in Live Label Scanner & CP-Score calculator, busting price traps with post-chemo recovery insights & turmeric-piperine synergy.',
+          url: 'https://sites.google.com/view/magamap/7-action-7%E4%BB%B6%E4%BA%8B/evoo-2-%E6%A9%84%E6%AC%96%E6%B2%B9',
+          category: 'free',
+          isFullWidth: true,
+          icon: 'Flame',
+        };
+
+        const filtered = parsed.filter(
+          (item) =>
+            item.id !== 'free_06' &&
+            item.code !== 'FREE_06' &&
+            item.id !== 'free_07' &&
+            item.code !== 'FREE_07' &&
+            !item.title.includes('Photobiomodulation') &&
+            !item.title.includes('PBM') &&
+            !item.title.includes('Nocturia') &&
+            !item.title.includes('EVOO')
+        );
+
+        return [...filtered, targetEnFree06, targetEnFree07];
       }
       return EN_FREE_RESOURCES;
     } catch {
@@ -118,7 +213,26 @@ export default function App() {
         const parsed: ResourceItem[] = JSON.parse(saved);
         const existingIds = new Set(parsed.map((item) => item.id));
         const missingDefaults = EN_PREMIUM_RESOURCES.filter((item) => !existingIds.has(item.id));
-        return missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+        const combined = missingDefaults.length > 0 ? [...parsed, ...missingDefaults] : parsed;
+        return combined.map((item) => {
+          if (item.id === 'prem_15' || item.code === 'PREM_15') {
+            return {
+              ...item,
+              badge: 'Mitochondrial Light',
+              title: 'Blueberry Fermented Anti-Inflammatory SODA Reset',
+              description: 'Stimulate cytochrome c oxidase, accelerate ATP mitochondrial production and suppress systemic inflammation.',
+            };
+          }
+          if (item.id === 'prem_16' || item.code === 'PREM_16') {
+            return {
+              ...item,
+              badge: 'Vagus Nerve Reset',
+              title: 'Sovereign Anti-Inflammatory Bee Arsenal',
+              description: 'Reactivate parasympathetic tone, abruptly reduce inflammatory cytokines (TNF-alpha, IL-6) and stop cellular leakages.',
+            };
+          }
+          return item;
+        });
       }
       return EN_PREMIUM_RESOURCES;
     } catch {
@@ -129,7 +243,15 @@ export default function App() {
   const [passkeyConfig, setPasskeyConfig] = useState<PasskeyConfig>(() => {
     try {
       const saved = localStorage.getItem('maga_passkey_config');
-      return saved ? JSON.parse(saved) : DEFAULT_PASSKEY_CONFIG;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return {
+          ...DEFAULT_PASSKEY_CONFIG,
+          ...parsed,
+          tempEnabled: parsed.tempEnabled !== undefined ? parsed.tempEnabled : false,
+        };
+      }
+      return DEFAULT_PASSKEY_CONFIG;
     } catch {
       return DEFAULT_PASSKEY_CONFIG;
     }
@@ -138,7 +260,18 @@ export default function App() {
   const [appContent, setAppContent] = useState<AppContentConfig>(() => {
     try {
       const saved = localStorage.getItem('maga_app_content');
-      return saved ? JSON.parse(saved) : DEFAULT_APP_CONTENT;
+      if (saved) {
+        const parsed: AppContentConfig = JSON.parse(saved);
+        if (
+          parsed.heroTitleMain?.includes('用幾百蚊') ||
+          parsed.heroTitleAccent?.includes('不如買之前直接獲取抗炎經歷')
+        ) {
+          parsed.heroTitleMain = DEFAULT_APP_CONTENT.heroTitleMain;
+          parsed.heroTitleAccent = DEFAULT_APP_CONTENT.heroTitleAccent;
+        }
+        return parsed;
+      }
+      return DEFAULT_APP_CONTENT;
     } catch {
       return DEFAULT_APP_CONTENT;
     }
@@ -297,6 +430,20 @@ export default function App() {
           layers={activePyramidLayers}
           content={activeAppContent}
         />
+
+        {/* 重要免責聲明 / Important Disclaimer Banner */}
+        <div className="bg-[#FEF2F2] border-2 border-[#DC2626] rounded-xl p-4 sm:p-5 shadow-[2.5px_2.5px_0px_#111827]">
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-black text-[#991B1B] uppercase tracking-wide">
+            <span>⚠️</span>
+            <span>重要免責聲明 / Important Disclaimer</span>
+          </div>
+          <div className="text-sm font-black text-[#B91C1C] mt-2 leading-relaxed">
+            以上所有食材、補充劑及如有關中成藥成份，<strong>「這只是我本人食用方法，僅供參考。」</strong>
+          </div>
+          <div className="text-xs font-semibold text-[#7F1D1D] mt-1">
+            All food ingredients, supplements, and relevant herbal elements mentioned: <em>&ldquo;This is purely my personal consumption method and is provided for reference only.&rdquo;</em>
+          </div>
+        </div>
 
         {/* Free & Premium Resource Matrix with Passkey Lock Gate */}
         <ResourceMatrix

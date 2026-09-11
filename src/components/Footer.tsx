@@ -42,6 +42,20 @@ export const Footer: React.FC<FooterProps> = ({ stripeUrl, lang = 'zh' }) => {
           </a>
         </div>
 
+        {/* 重要免責聲明 / Important Disclaimer */}
+        <div className="p-4 rounded-xl bg-[#FEF2F2] border-2 border-[#DC2626] shadow-[2px_2px_0px_#111827] max-w-2xl mx-auto text-left">
+          <div className="text-xs font-black text-[#991B1B] uppercase flex items-center gap-1.5 mb-1.5">
+            <span>⚠️</span>
+            <span>重要免責聲明 / Important Disclaimer</span>
+          </div>
+          <div className="text-xs font-bold text-[#B91C1C] leading-relaxed">
+            以上所有食材、補充劑及如有關中成藥成份，<strong>「這只是我本人食用方法，僅供參考。」</strong>
+          </div>
+          <div className="text-[11px] font-semibold text-[#7F1D1D] mt-1 border-t border-red-200 pt-1">
+            All ingredients, supplements, and relevant herbal elements mentioned above: <em>&ldquo;This is purely my personal consumption method and is provided for reference only.&rdquo;</em>
+          </div>
+        </div>
+
         <div className="text-[11px] font-bold text-slate-500 pt-4 border-t border-slate-300">
           © {new Date().getFullYear()} MAGA Anti-inflammatory Engine. All Rights Reserved.
         </div>

@@ -9,6 +9,127 @@
     <meta property="og:description" content="MAGA 細胞調頻實戰平台：免費公開資源與專屬物資解鎖管理系統，支援 Passkey 安全驗證與 GEM PRO 即時管理。" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        // 1. Intercept Vite HMR WebSocket in sandboxed environment to prevent disconnect errors
+        var OriginalWebSocket = window.WebSocket;
+        if (OriginalWebSocket) {
+          function SafeWebSocket(url, protocols) {
+            var isViteHmr =
+              (typeof protocols === 'string' && protocols.indexOf('vite-hmr') !== -1) ||
+              (Array.isArray(protocols) && protocols.indexOf('vite-hmr') !== -1) ||
+              (typeof url === 'string' && (url.indexOf('vite-hmr') !== -1 || url.indexOf(':3000') !== -1));
+
+            if (isViteHmr) {
+              var listeners = {};
+              var mockSocket = {
+                binaryType: 'blob',
+                bufferedAmount: 0,
+                extensions: '',
+                protocol: 'vite-hmr',
+                readyState: 1, // OPEN
+                url: String(url),
+                CONNECTING: 0,
+                OPEN: 1,
+                CLOSING: 2,
+                CLOSED: 3,
+                send: function () {},
+                close: function () {
+                  mockSocket.readyState = 3;
+                },
+                addEventListener: function (type, fn) {
+                  listeners[type] = listeners[type] || [];
+                  listeners[type].push(fn);
+                  if (type === 'open') {
+                    setTimeout(function () {
+                      try { fn({ type: 'open', target: mockSocket }); } catch (e) {}
+                    }, 0);
+                  }
+                },
+                removeEventListener: function (type, fn) {
+                  if (!listeners[type]) return;
+                  listeners[type] = listeners[type].filter(function (f) { return f !== fn; });
+                },
+                dispatchEvent: function () { return true; },
+                onopen: null,
+                onclose: null,
+                onerror: null,
+                onmessage: null
+              };
+
+              setTimeout(function () {
+                if (typeof mockSocket.onopen === 'function') {
+                  try { mockSocket.onopen({ type: 'open', target: mockSocket }); } catch (e) {}
+                }
+              }, 0);
+
+              return mockSocket;
+            }
+
+            return new OriginalWebSocket(url, protocols);
+          }
+
+          SafeWebSocket.prototype = OriginalWebSocket.prototype;
+          SafeWebSocket.CONNECTING = 0;
+          SafeWebSocket.OPEN = 1;
+          SafeWebSocket.CLOSING = 2;
+          SafeWebSocket.CLOSED = 3;
+          window.WebSocket = SafeWebSocket;
+        }
+
+        // 2. Suppress unhandled rejection popups for benign Vite HMR sandbox websocket events
+        window.addEventListener('unhandledrejection', function (event) {
+          if (!event) return;
+          var reason = event.reason;
+          var msg = '';
+          if (typeof reason === 'string') {
+            msg = reason;
+          } else if (reason && typeof reason === 'object') {
+            msg = (reason.message || '') + ' ' + (reason.stack || '') + ' ' + String(reason);
+          }
+          if (
+            msg.indexOf('WebSocket') !== -1 ||
+            msg.indexOf('websocket') !== -1 ||
+            msg.indexOf('closed without opened') !== -1 ||
+            msg.indexOf('failed to connect to websocket') !== -1
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        // 3. Suppress window error popups for websocket
+        window.addEventListener('error', function (event) {
+          if (!event) return;
+          var msg = (event.message || '') + ' ' + (event.error ? (event.error.message || '') : '');
+          if (
+            msg.indexOf('WebSocket') !== -1 ||
+            msg.indexOf('websocket') !== -1 ||
+            msg.indexOf('closed without opened') !== -1 ||
+            msg.indexOf('failed to connect to websocket') !== -1
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        // 4. Suppress console.error overlay triggers for benign Vite HMR disconnect
+        var origConsoleError = console.error;
+        console.error = function () {
+          var args = Array.prototype.slice.call(arguments);
+          var text = args.map(function (a) {
+            return (a && (a.message || a.stack)) || String(a || '');
+          }).join(' ');
+          if (
+            text.indexOf('[vite] failed to connect to websocket') !== -1 ||
+            text.indexOf('WebSocket closed without opened') !== -1
+          ) {
+            return;
+          }
+          return origConsoleError.apply(console, args);
+        };
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">

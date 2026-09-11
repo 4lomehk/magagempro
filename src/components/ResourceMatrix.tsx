@@ -62,7 +62,8 @@ export const ResourceMatrix: React.FC<ResourceMatrixProps> = ({
     const isMaster = storedMasterKeys.some((mk) => mk.toLowerCase() === cleanInput.toLowerCase());
     
     // Check Temp Passkey
-    const isTemp = cleanInput.toLowerCase() === (passkeyConfig.tempPasskey || 'temp').toLowerCase();
+    const isTemp = cleanInput.toLowerCase() === (passkeyConfig.tempPasskey || 'temp').toLowerCase() || cleanInput.toLowerCase() === 'temp';
+    const isTempEnabled = passkeyConfig.tempEnabled === true;
 
     // Check Additional configured passkeys (stored securely in code)
     const storedAuthorizedKeys = [
@@ -76,6 +77,17 @@ export const ResourceMatrix: React.FC<ResourceMatrixProps> = ({
     if (isMaster || isAdditional) {
       triggerUnlockEffect();
     } else if (isTemp) {
+      if (!isTempEnabled) {
+        setErrorMessage(
+          lang === 'en'
+            ? "Temporary passkey 'temp' is currently paused. Please use an authorized passkey or subscribe on Stripe."
+            : "temp 體驗碼目前已暫停開放解鎖。請輸入正式專屬代碼或至 Stripe 取得授權。"
+        );
+        onShowToast(lang === 'en' ? "Temporary passkey 'temp' is paused" : "temp 體驗碼已暫停解鎖", 'error');
+        setTimeout(() => setErrorMessage(null), 5000);
+        return;
+      }
+
       if (currentDate <= expiryDate) {
         triggerUnlockEffect();
       } else {
@@ -184,20 +196,31 @@ export const ResourceMatrix: React.FC<ResourceMatrixProps> = ({
               <KeyRound className="w-4 h-4 text-[#D97706]" />
               <span>{lang === 'en' ? 'Passkey Verification & Decryption:' : '輸入一Code以下解銷 (Passkey Verification)：'}</span>
             </label>
-            <p className="text-xs font-bold text-[#B45309] leading-relaxed">
-              💡 {lang === 'en' ? 'Temporary Passkey:' : '臨時體驗碼：'}
-              <button
-                type="button"
-                onClick={() => {
-                  setInputPasskey(passkeyConfig.tempPasskey);
-                }}
-                className="bg-[#FEF08A] hover:bg-[#FDE047] text-[#854D0E] px-2 py-0.5 rounded border border-[#111827] font-mono font-black mx-1 cursor-pointer transition-colors"
-                title={lang === 'en' ? 'Click to fill temporary passkey' : '點擊直接填入體驗碼'}
-              >
-                {passkeyConfig.tempPasskey}
-              </button>
-              {lang === 'en' ? '(Active — click to auto-fill)' : '（開放中，點擊可直接填入）'}
-            </p>
+            {passkeyConfig.tempEnabled ? (
+              <p className="text-xs font-bold text-[#B45309] leading-relaxed">
+                💡 {lang === 'en' ? 'Temporary Passkey:' : '臨時體驗碼：'}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInputPasskey(passkeyConfig.tempPasskey);
+                  }}
+                  className="bg-[#FEF08A] hover:bg-[#FDE047] text-[#854D0E] px-2 py-0.5 rounded border border-[#111827] font-mono font-black mx-1 cursor-pointer transition-colors"
+                  title={lang === 'en' ? 'Click to fill temporary passkey' : '點擊直接填入體驗碼'}
+                >
+                  {passkeyConfig.tempPasskey}
+                </button>
+                {lang === 'en' ? '(Active — click to auto-fill)' : '（開放中，點擊可直接填入）'}
+              </p>
+            ) : (
+              <p className="text-xs font-bold text-slate-600 leading-relaxed flex items-center gap-1.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                <span>
+                  {lang === 'en'
+                    ? "Temporary passkey ('temp') is currently paused. Please enter an authorized passkey or acquire via Stripe."
+                    : '臨時體驗碼（temp）目前已暫停開放解鎖。請輸入專屬 Passkey 或至 Stripe 取得授權。'}
+                </span>
+              </p>
+            )}
           </div>
 
           <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-2.5 max-w-md">
@@ -312,9 +335,24 @@ export const ResourceMatrix: React.FC<ResourceMatrixProps> = ({
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-[#EA580C]">
-                <span className="text-[11px] text-slate-500">免費直達資源</span>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[11px] text-slate-500">
+                    {lang === 'en' ? 'Free Strategic Resource' : '免費直達資源'}
+                  </span>
+                  {item.id === 'free_07' && (
+                    <a
+                      href="/evoo-guide.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-[10px] bg-[#FEF08A] hover:bg-[#FDE047] text-[#854D0E] font-black px-2 py-0.5 rounded border border-[#CA8A04] transition-colors shadow-sm"
+                    >
+                      {lang === 'en' ? '⚡ Interactive Tool' : '⚡ 照妖鏡微應用'}
+                    </a>
+                  )}
+                </div>
                 <span className="inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                  <span>立即閱覽</span>
+                  <span>{lang === 'en' ? 'View Guide' : '立即閱覽'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </span>
               </div>
